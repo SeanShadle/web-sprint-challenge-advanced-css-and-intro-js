@@ -136,7 +136,44 @@ button:hover{
 }
 
 /* -----------------Media Queries-------------------- */
+@media(max-width: 800px){
+    nav{
+        width:35%;
+    }
 
+    nav a{
+        font-size: 2rem;
+    }
+
+    .title-container{
+        display: flex;
+    }
+
+    .title-container h1{
+        font-size: 4rem;
+    }
+
+    .artists-container{
+        width: 87%;
+        margin-top: 2rem;
+    }
+
+    .artist img{
+        height:25%;
+    }
+
+    .artist a{
+        font-size: 2.25rem;
+    }
+
+    .artist a:hover{
+        font-size: 2.25rem;
+    }
+
+    .bio{
+        font-size: 1.25rem;
+    }
+}
 
 @media(max-width: 500px){
     nav{

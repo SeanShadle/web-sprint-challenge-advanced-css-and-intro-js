@@ -234,7 +234,7 @@ function getArtistByIndex(array, index) {
 function get20s(arr){
   for(let i = 0; i < arr.length; i++){
     if((arr[i]['years'].split(' ')[0] >= 1900) && (arr[i]['years'].split(' ')[2] < 2000)){
-      console.log(arr[i]);
+      return(arr[i]);
     }
   }
 }
@@ -330,12 +330,19 @@ function getHTML(/* Code here */){
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
-
-function randomize(/* Code here */){
-
-    /* Code here */
-
+testArr = [1,2,3,4,5,6,7,8,9];
+function randomize(arr){
+  let rdm = arr.length, temp, index;
+  while(rdm > 0){
+    index = Math.floor(Math.random() * rdm);
+    rdm--;
+    temp = arr[rdm];
+    arr[rdm] = arr[index];
+    arr[index] = temp;
   }
+  return arr;
+}
 
+  console.log(randomize(testArr));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
