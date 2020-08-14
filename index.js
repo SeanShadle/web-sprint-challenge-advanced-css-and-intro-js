@@ -232,14 +232,16 @@ function getArtistByIndex(array, index) {
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(arr){
+  ageRange = [];
   for(let i = 0; i < arr.length; i++){
     if((arr[i]['years'].split(' ')[0] >= 1900) && (arr[i]['years'].split(' ')[2] < 2000)){
-      return(arr[i]);
+      ageRange.push(arr[i]['name']);
     }
   }
+  return ageRange;
 }
-
-get20s(artists);
+//push names to array and call array. push in loop, return after
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -275,9 +277,10 @@ function addArtist(obj){
   artists.push(obj);
   return artists;
   }
+  
 
   addArtist({"id": 20, "name": "Sean Shadle", 'years': "1996 - ", "genre": "Web Design", "Nationality": "American", "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"});
-
+console.log(artists);
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
@@ -290,14 +293,14 @@ function lotsOfArt(arr){
   let over = [];
   for (i = 0; i < arr.length; i++){
     if(arr[i]['paintings'] > 100){
-      over.push(arr[i]);
-    
+      over.push(arr[i]["name"]);
+    //add.names
     }
   }
   return over;
 }
 
-lotsOfArt(artists);
+console.log(lotsOfArt(artists));
 
 // 🎨🎨 STRETCH 🎨🎨//
 
